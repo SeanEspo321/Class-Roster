@@ -28,20 +28,23 @@ int Roster::ParseAddStudents(std::string row)
 
 	lhs = rhs + 1;
 	rhs = row.find(",", lhs);
-	string age = row.substr(lhs, rhs - lhs);
-
-	// What to do with an array?
-	lhs = rhs + 1;
-	rhs = row.find(",", lhs);
-	string daysInCourse1 = row.substr(lhs, rhs - lhs);
+	string ageString = row.substr(lhs, rhs - lhs);
+	int age = stoi(ageString);
 
 	lhs = rhs + 1;
 	rhs = row.find(",", lhs);
-	string daysInCourse2 = row.substr(lhs, rhs - lhs);
+	string daysInCourse1String = row.substr(lhs, rhs - lhs);
+	int daysInCourse1 = stoi(daysInCourse1String);
 
 	lhs = rhs + 1;
 	rhs = row.find(",", lhs);
-	string daysInCourse3 = row.substr(lhs, rhs - lhs);
+	string daysInCourse2String = row.substr(lhs, rhs - lhs);
+	int daysInCourse2 = stoi(daysInCourse2String);
+
+	lhs = rhs + 1;
+	rhs = row.find(",", lhs);
+	string daysInCourse3String = row.substr(lhs, rhs - lhs);
+	int daysInCourse3 = stoi(daysInCourse3String);
 
 	lhs = rhs + 1;
 	DegreeProgram theDegreeProgram;
